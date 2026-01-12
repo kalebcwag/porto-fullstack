@@ -1,5 +1,5 @@
 # porto-fullstack
 
-Frontend: Next.js
-Backend: Express.js
-Database: PostgreSQL
+Frontend: Next.js<br>
+Backend: Express.js<br>
+Database: PostgreSQL<br>
