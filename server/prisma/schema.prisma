@@ -1,0 +1,24 @@
+generator client {
+  provider   = "prisma-client-js"
+  binaryTargets = ["native", "windows"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model projects {
+  id            Int     @id
+  judul_project String
+  deskripsi     String
+  techs         String
+  link          String?
+}
+
+model sertifikat {
+  id               Int      @id @default(autoincrement())
+  nama_sertifikasi String
+  tanggal          DateTime @db.Date
+  foto             String
+}
