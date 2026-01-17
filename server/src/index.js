@@ -19,8 +19,8 @@ app.get('/', (req, res) => res.send('Backend is Running!'));
 app.use('/api', apiRoutes);
 
 if (process.env.NODE_ENV !== 'production') {
-    app.listen(port, () => {
-        console.log(`Server berjalan di port ${port}`);
+    app.listen(PORT, () => {
+        console.log(`Server berjalan di port ${PORT}`);
     });
 }
 
