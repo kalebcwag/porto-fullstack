@@ -1,5 +1,5 @@
 generator client {
-  provider   = "prisma-client-js"
+  provider      = "prisma-client-js"
   binaryTargets = ["native", "windows"]
 }
 
@@ -21,4 +21,5 @@ model sertifikat {
   nama_sertifikasi String
   tanggal          DateTime @db.Date
   foto             String
+  credential       String?
 }
