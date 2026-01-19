@@ -20,6 +20,5 @@ model sertifikat {
   id               Int      @id @default(autoincrement())
   nama_sertifikasi String
   tanggal          DateTime @db.Date
-  foto             String
-  credential       String?
+  foto             String?
 }
