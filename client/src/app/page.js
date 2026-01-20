@@ -7,6 +7,7 @@ export default function Home() {
   const [sertifikat, setSertifikat] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isCVOpen, setIsCVOpen] = useState(false);
 
   useEffect(() => {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
@@ -39,7 +40,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-50" onClick={() => {if (isDropdownOpen) {
+    <main className="min-h-screen bg-gray-50 paper-bg" onClick={() => {if (isDropdownOpen) {
         setIsDropdownOpen(false);
     }}}>
       
@@ -129,7 +130,30 @@ export default function Home() {
                     className="w-full h-full object-cover scale-150" // KUNCI: object-cover bikin crop otomatis
                 />
             </div>
-            
+        </div>
+
+        <div className="mt-8">
+            <a 
+                href="pdfs/CVKaleb.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                    inline-flex items-center gap-2 
+                    bg-yellow-300 text-black font-bold text-lg px-6 py-3 
+                    border-2 border-black 
+                    doodle-border-b
+                    hover:scale-105 
+                    hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] 
+                    transition-all duration-300
+                "
+            >
+                {/* Ikon Mata (View) */}
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                View CV / Resume
+            </a>
         </div>
 
         {/* --- RECENT PROJECTS --- */}
@@ -202,7 +226,7 @@ export default function Home() {
             {sertifikat.map((cert) => (
             <div 
                 key={cert.id} 
-                className="doodle-sketch hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 flex flex-col overflow-hidden rounded-lg"
+                className="doodle-sketch bg-white hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 flex flex-col overflow-hidden rounded-lg"
             >
                 <div className="p-6 flex-1 flex flex-col">
                 <div className="mb-4">
@@ -226,6 +250,12 @@ export default function Home() {
         </div>
 
       </div>
+
+      <footer className="bg-white border-t-2 border-black border-2 z-50 transition-all p-4">
+        <div className="text-xl md:text-xl font-bold text-black text-center">
+            <p>&copy; 2026 Kaleb Coyo Wagito. All Rights Reserved.</p>
+        </div>
+      </footer>
     </main>
   );
 }
