@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 
 export default function Home() {
   const [projects, setProjects] = useState([]);
@@ -57,9 +58,9 @@ export default function Home() {
                 {/* MENU */}
                 {/* Di HP gap kecil (4), di PC gap besar (10) */}
                 <ul className="flex flex-wrap justify-center gap-4 md:gap-10 text-sm md:text-lg font-bold text-black list-none">
-                    <li className="cursor-pointer hover:underline transition">Home</li>
-                    <li className="cursor-pointer hover:underline transition">About</li>
-                    <li className="cursor-pointer hover:underline transition">Projects</li>
+                    <a href="#about"><li className="cursor-pointer hover:underline transition">About</li></a>
+                    <a href="#projects"><li className="cursor-pointer hover:underline transition">Projects</li></a>
+                    <a href="#certificates"><li className="cursor-pointer hover:underline transition">Certificates</li></a>
                     {/* <li className="cursor-pointer hover:underline transition">Contact</li> */}
                 </ul>
 
@@ -69,7 +70,7 @@ export default function Home() {
                     Connect With Me
                 </div>
                 {isDropdownOpen && (
-                <div className="absolute group right-0 mt-2 w-48 bg-white border-2 border-black overflow-hidden flex flex-col">
+                <div className="absolute group right-12 mt-32 w-48 bg-white border-2 border-black overflow-hidden flex flex-col">
                     
                     {/* Link LinkedIn */}
                     <a 
@@ -100,7 +101,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <div className="px-4 sm:px-6 lg:px-8 pb-20">
+      <div id="about" className="px-4 sm:px-6 lg:px-8 pb-20 scroll-mt-24">
         
         {/* --- HELLO WORLD SECTION --- */}
         {/* mt-12 di HP, mt-24 di PC */}
@@ -110,17 +111,18 @@ export default function Home() {
             {/* flex-1 agar mengambil sisa ruang yang ada */}
             <div className="text-center md:text-left flex-1">
                 <h1 className="text-3xl md:text-5xl font-extrabold text-black leading-tight">
-                    Hello, World! <br className="hidden md:block"/> Kaleb's here.
+                    Hello, World! <br className="hidden md:block"/> 
+                    <RoughNotation type="highlight" show={true} color="#fde047" padding={10} animationDelay={1000}>Kaleb's here.</RoughNotation>
                 </h1>
                 <p className="mt-6 text-base md:text-xl text-gray-700 leading-relaxed">
-                    Informatics Graduate (2025) with a strong interest in AI and Data Science, also a strong foundation in Software Engineering, Object-Oriented Programming (OOP), and Application Development. 
-                    Proficient in Python, Java, Kotlin, and SQL. Proven track record in delivering functional applications, including an Android-based health monitoring system. 
+                    Informatics Graduate (2025) with a strong interest in <RoughNotation type="box" color="#ff0000" show={true}>AI and Data Science</RoughNotation>, also a strong foundation in <RoughNotation multiline={true} type="underline" color="#0000ff" show={true}>Software Engineering, Object-Oriented Programming (OOP), and Application Development.</RoughNotation> 
+                    Proficient in <RoughNotation type="circle" padding={10} color="#00ff00" show={true}>Python, Java, Kotlin, and SQL.</RoughNotation> Proven track record in delivering functional applications, including an Android-based health monitoring system. 
                 </p>
             </div>
 
             {/* BAGIAN FOTO (Kanan/Bawah) */}
             {/* shrink-0: Agar foto tidak mengecil/gepeng saat layar menyempit */}
-            <div className="shrink-0 w-48 h-48 md:w-64 md:h-64 border-1 border-black overflow-hidden relative">
+            <div className="doodle-tape doodle-sketch shrink-0 w-48 h-48 md:w-64 md:h-64 overflow-hidden relative">
                 <img 
                     src="/images/profile.jpg" // Pastikan ada garis miring di depan
                     alt="Profile Kaleb"
@@ -131,7 +133,7 @@ export default function Home() {
         </div>
 
         {/* --- RECENT PROJECTS --- */}
-        <h2 className="text-3xl md:text-4xl max-w-7xl font-bold text-black mx-auto mt-16 mb-8 text-center md:text-left border-b-2 border-gray-200 pb-4">
+        <h2 id="projects" className="text-3xl md:text-4xl max-w-7xl font-bold text-black mx-auto mt-16 mb-8 text-center md:text-left border-b-2 pb-4 scroll-mt-24">
             Recent Projects
         </h2>
         
@@ -140,7 +142,7 @@ export default function Home() {
             {projects.map((project) => (
             <div 
                 key={project.id} 
-                className="bg-white border-2 border-black hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 flex flex-col overflow-hidden rounded-lg group"
+                className="bg-white doodle-border transition-all duration-300 flex flex-col overflow-hidden rounded-lg group"
             >
                 <div className="p-6 flex-1 flex flex-col">
                 <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 transition-colors">
@@ -192,7 +194,7 @@ export default function Home() {
         </div>
 
         {/* --- CERTIFICATES --- */}
-        <h2 className="text-3xl md:text-4xl max-w-7xl font-bold text-black mx-auto mt-20 mb-8 text-center md:text-left border-b-2 border-gray-200 pb-4">
+        <h2 id="certificates" className="text-3xl md:text-4xl max-w-7xl font-bold text-black mx-auto mt-20 mb-8 text-center md:text-left border-b-2 pb-4 scroll-mt-24">
             Certificates
         </h2>
         
@@ -200,7 +202,7 @@ export default function Home() {
             {sertifikat.map((cert) => (
             <div 
                 key={cert.id} 
-                className="bg-white border-2 border-black hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 flex flex-col overflow-hidden rounded-lg"
+                className="doodle-sketch hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 flex flex-col overflow-hidden rounded-lg"
             >
                 <div className="p-6 flex-1 flex flex-col">
                 <div className="mb-4">
