@@ -116,8 +116,8 @@ export default function Home() {
                     <RoughNotation type="highlight" show={true} color="#fde047" padding={10} animationDelay={1000}>Kaleb's here.</RoughNotation>
                 </h1>
                 <p className="mt-6 text-base md:text-xl text-gray-700 leading-relaxed">
-                    Informatics Graduate (2025) with a strong interest in <RoughNotation type="box" color="#ff0000" show={true}>AI and Data Science</RoughNotation>, also a strong foundation in <RoughNotation multiline={true} type="underline" color="#0000ff" show={true}>Software Engineering, Object-Oriented Programming (OOP), and Application Development.</RoughNotation> 
-                    Proficient in <RoughNotation type="circle" padding={10} color="#00ff00" show={true}>Python, Java, Kotlin, and SQL.</RoughNotation> Proven track record in delivering functional applications, including an Android-based health monitoring system. 
+                    Informatics Graduate (2025) with a strong interest in <RoughNotation type="box" color="#ff0000" show={true} multiline={true}>AI and Data Science</RoughNotation>, also a strong foundation in <RoughNotation multiline={true} type="underline" color="#0000ff" show={true}>Software Engineering, Object-Oriented Programming (OOP), and Application Development.</RoughNotation> 
+                    Proficient in <RoughNotation type="circle" padding={10} color="#00ff00" show={true} multiline={true}>Python, Java, Kotlin, and SQL.</RoughNotation> Proven track record in delivering functional applications, including an Android-based health monitoring system. 
                 </p>
             </div>
 
