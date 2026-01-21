@@ -9,11 +9,12 @@ datasource db {
 }
 
 model projects {
-  id            Int     @id
-  judul_project String
-  deskripsi     String
-  techs         String
-  link          String?
+  id               Int     @id
+  judul_project    String
+  deskripsi        String
+  techs            String
+  link             String?
+  importance_level Int
 }
 
 model sertifikat {

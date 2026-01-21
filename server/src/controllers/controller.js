@@ -5,8 +5,12 @@ const prisma = new PrismaClient();
 exports.getProjects = async (req, res) => {
     try {
         const [projects, sertifikat] = await Promise.all([
-            prisma.projects.findMany(), // Query 1
-            prisma.sertifikat.findMany() // Query 2
+            prisma.projects.findMany({orderBy: {
+                importance_level:"asc"
+            }}), // Query 1
+            prisma.sertifikat.findMany({orderBy: {
+                tanggal:"desc"
+            }}) // Query 2
         ]);
 
         // 3. Kirim data ke frontend
