@@ -124,7 +124,7 @@ export default function Home() {
             <div className="text-center md:text-left flex-1">
                 <h1 className="text-3xl md:text-5xl font-extrabold text-black leading-tight">
                     Hello, World! <br className="hidden md:block"/> 
-                    <RoughNotation type="highlight" show={true} color="#fde047" padding={10} animationDelay={1000}>Kaleb</RoughNotation>'s here.
+                    <RoughNotation type="highlight" show={true} color="#fde047" padding={10} animationDelay={1000}>Kaleb</RoughNotation> is here.
                 </h1>
                 <p className="mt-6 text-base md:text-xl text-gray-700 leading-relaxed">
                     Informatics Graduate (2025) with a strong interest in <RoughNotation type="box" color="#ff0000" show={true} multiline={true}>AI and Data Science</RoughNotation>, also a strong foundation in <RoughNotation multiline={true} type="underline" color="#0000ff" show={true}>Software Engineering, Object-Oriented Programming (OOP), and Application Development.</RoughNotation> 
